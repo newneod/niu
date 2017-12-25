@@ -19,7 +19,6 @@ class route
 			exit( 'param error!' );
 		}
 		$strRequire = 'app/' . $arrRes[ 'm' ] . '/controller/' . $arrRes[ 'c' ] . 'Controller.php';
-		//echo $strRequire;exit;
 		if( !is_file( $strRequire ) ){
 			exit( 'file not found!' );
 		}
