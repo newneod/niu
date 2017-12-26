@@ -1,11 +1,12 @@
 <?php 
-namespace library;
+namespace core\framework;
 
-use library\route;
-use library\dispatcher;
+use core\framework\route;
+use core\framework\dispatcher;
 
-require 'library/route.php';
-require 'library/dispatcher.php';
+require 'core/framework/route.php';
+require 'core/framework/dispatcher.php';
+require 'core/framework/core.php';
 
 class init
 {

@@ -1,9 +1,9 @@
 <?php
 
-require_once 'library/core.php';
-require_once 'conf/config.php';
+require 'core/framework/init.php';
+require 'conf/config.php';
 
-library\init::run();
+core\framework\init::run();
 
 
 ?>

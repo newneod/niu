@@ -1,5 +1,5 @@
 <?php
-namespace library;
+namespace core\framework;
 
 class route
 {
@@ -24,7 +24,7 @@ class route
 		}
 
 		//返回待加载的controller地址
-		return [ 'address' => $strRequire, 'c' => $arrRes[ 'c' ], 'a' => $arrRes[ 'a' ] ];
+		return array( 'address' => $strRequire, 'c' => $arrRes[ 'c' ], 'a' => $arrRes[ 'a' ] );
 	}
 }
 
