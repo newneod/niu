@@ -7,15 +7,16 @@ class coreController
 
     public function __construct()
     {
-
+        $this->autoloadClass();
     }
 
 
     public function autoloadClass()
 	{
-        spl_autoload_register( function( $class_name ){
-            require_once $class_name . '.php';
-        } );
+        spl_autoload_register( function( $strClassName ){
+            echo $strClassName;exit;
+            require $strClassName . '.php';
+        }, true );
 	}
 }
 
