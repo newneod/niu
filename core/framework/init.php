@@ -12,6 +12,10 @@ class init
 {
 	public static function run()
 	{
+	    //实例化对象时，自动引用该类文件
+	    $objCore = new core();
+	    $objCore->autoloadClass();
+
 		//通过路由获取要执行的Module/Controller/Action
 		$objRoute = new route();
 		$arrRoute = $objRoute->getCAddressByUrl();

@@ -2,21 +2,14 @@
 
 namespace app\module\controller;
 
-require 'app/module/model/test.php';
+use app\module\model\testModel;
 
 class foo
 {
-
-    public function __construct()
-    {
-
-    }
-
-
     public function bar()
 	{
-		$a = new \app\module\model\test;
-		$a->test1();
+		$a = new testModel;
+		$a->test();
 	}
 }
 

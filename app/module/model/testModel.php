@@ -1,9 +1,9 @@
 <?php
 namespace app\module\model;
 
-class test
+class testModel
 {
-    public function test1()
+    public function test()
     {
         echo 'test1 model';
     }
