@@ -13,6 +13,7 @@ class route
 			$arrParam = explode( '=', $strParam );
 			$arrRes[ $arrParam[ 0 ] ] = $arrParam[ 1 ];
 		}
+//        $arrRes[ 'c' ] .= 'Controller';
 
 		//文件存在性校验
 		if( '' === $arrRes[ 'm' ] || '' === $arrRes[ 'c' ] || '' === $arrRes[ 'a' ] ){

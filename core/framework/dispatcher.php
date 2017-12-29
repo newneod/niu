@@ -8,18 +8,24 @@ class dispatcher
 	/*
 	 * 初始化单例数组
 	 */
-	private static $arrInstance = array();
+	private static $arrInstances = array();
 
 	public function dispatche( $arrRoute )
 	{
 		require_once $arrRoute[ 'address' ];
-		$strTempC = '\\app\\module\\controller\\' . $arrRoute[ 'c' ];//使用命名空间时
-		//$strTempC = $arrRoute[ 'c' ];//不使用命名空间时
+		$strTempC = '\\app\\module\\controller\\' . $arrRoute[ 'c' ] . 'Controller';//使用命名空间时
+		//$strTempC = $arrRoute[ 'c' ] . 'Controller';//不使用命名空间时
 
 		if( !class_exists( $strTempC ) ){
-			//throw new \ErrorException( 'controller not found!', HTTP_CODE_NOT_FOUND );
+			exit( '类不存在!' );
 		}
-		$objC = new $strTempC;
+
+		if( self::$arrInstances[ $strTempC ] ){
+            $objC = self::$arrInstances[ $strTempC ];
+        }else{
+            $objC = new $strTempC;
+            self::$arrInstances[ $strTempC ] = $objC;
+        }
 		$strTempA = $arrRoute[ 'a' ];
 		return $objC->$strTempA();
 	}

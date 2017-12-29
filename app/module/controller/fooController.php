@@ -4,7 +4,7 @@ namespace app\module\controller;
 
 use app\module\model\testModel;
 
-class foo
+class fooController
 {
     public function bar()
 	{
