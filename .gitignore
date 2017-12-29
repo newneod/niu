@@ -8,3 +8,5 @@
 .idea
 .DS_Store
 /app/.DS_Store
+/vendor
+/composer.lock
