@@ -19,15 +19,14 @@ class dispatcher
 		if( !class_exists( $strTempC ) ){
 			exit( '类不存在!' );
 		}
-
-
+        
 		if( isset( self::$arrInstances[ $strTempC ] ) ){
             $objC = self::$arrInstances[ $strTempC ];
         }else{
             $objC = new $strTempC;
             self::$arrInstances[ $strTempC ] = $objC;
         }
-        
+
 		$strTempA = $arrRoute[ 'a' ];
 		return $objC->$strTempA();
 	}
