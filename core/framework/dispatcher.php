@@ -20,12 +20,14 @@ class dispatcher
 			exit( '类不存在!' );
 		}
 
-		if( self::$arrInstances[ $strTempC ] ){
+
+		if( isset( self::$arrInstances[ $strTempC ] ) ){
             $objC = self::$arrInstances[ $strTempC ];
         }else{
             $objC = new $strTempC;
             self::$arrInstances[ $strTempC ] = $objC;
         }
+        
 		$strTempA = $arrRoute[ 'a' ];
 		return $objC->$strTempA();
 	}
