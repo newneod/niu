@@ -17,7 +17,6 @@ class route
 			$arrParam = explode( '=', $strParam );
 			$arrRes[ $arrParam[ 0 ] ] = $arrParam[ 1 ];
 		}
-//        $arrRes[ 'c' ] .= 'Controller';
 
 		//文件存在性校验
 		if( '' === $arrRes[ 'm' ] || '' === $arrRes[ 'c' ] || '' === $arrRes[ 'a' ] ){
@@ -37,19 +36,19 @@ class route
      * cli模式通过传参获取路由地址
      * @return array
      */
-    public function getCAddressByParams( array $arrParams, $strDirUrl )
+    public function getCAddressByParams( $strDirUrl )
     {
         //文件存在性校验
-        if( '' === $arrParams[ 1 ] || '' === $arrParams[ 2 ] || '' === $arrParams[ 3 ] ){
+        if( '' === $_SERVER[ 'argv' ][ 1 ] || '' === $_SERVER[ 'argv' ][ 2 ] || '' === $_SERVER[ 'argv' ][ 3 ] ){
             exit( 'param error!' );
         }
-        $strRequire = 'app/' . $arrParams[ 1 ] . '/controller/' . $arrParams[ 2 ] . 'Controller.php';
+        $strRequire = 'app/' . $_SERVER[ 'argv' ][ 1 ] . '/controller/' . $_SERVER[ 'argv' ][ 2 ] . 'Controller.php';
         if( !file_exists( $strRequire ) ){
             exit( 'file not found!' );
         }
 
         //返回待加载的controller地址
-        return array( 'address' => $strRequire, 'c' => $arrParams[ 2 ], 'a' => $arrParams[ 3 ] );
+        return array( 'address' => $strRequire, 'c' => $_SERVER[ 'argv' ][ 2 ], 'a' => $_SERVER[ 'argv' ][ 3 ] );
     }
 }
 

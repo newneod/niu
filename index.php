@@ -8,7 +8,7 @@ switch( SAPI_MODE ){
         core\framework\init::run();
         break;
     case 'CLI':
-        core\framework\init::cliRun( $argv, dirname( __FILE__ ) );
+        core\framework\init::cliRun( dirname( __FILE__ ) );
         break;
 }
 

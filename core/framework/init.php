@@ -32,9 +32,9 @@ class init
     /**
      * cli模式启动方法
      */
-    public static function cliRun( array $arrParams, $strDirUrl )
+    public static function cliRun( $strDirUrl )
     {
-        if( empty( $arrParams ) ){
+        if( empty( $_SERVER[ 'argv' ] ) ){
             exit( 'params cannot be empty!' );
         }
 
@@ -44,7 +44,7 @@ class init
 
         //通过路由获取要执行的Module/Controller/Action
         $objRoute = new route();
-        $arrRoute = $objRoute->getCAddressByParams( $arrParams, $strDirUrl );
+        $arrRoute = $objRoute->getCAddressByParams( $strDirUrl );
 
         //分发执行
         $objDispatcher = new dispatcher();
