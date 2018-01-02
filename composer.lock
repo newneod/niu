@@ -1,0 +1,125 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cdc35be106fdd85adc320999b88f1d6a",
+    "packages": [
+        {
+            "name": "google/protobuf",
+            "version": "v3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/protobuf.git",
+                "reference": "106ffc04be1abf3ff3399f54ccf149815b287dd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/google/protobuf/106ffc04be1abf3ff3399f54ccf149815b287dd9.zip",
+                "reference": "106ffc04be1abf3ff3399f54ccf149815b287dd9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8.0"
+            },
+            "suggest": {
+                "ext-bcmath": "Need to support JSON deserialization"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Google\\Protobuf\\": "php/src/Google/Protobuf",
+                    "GPBMetadata\\Google\\Protobuf\\": "php/src/GPBMetadata/Google/Protobuf"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "proto library for PHP",
+            "homepage": "https://developers.google.com/protocol-buffers/",
+            "keywords": [
+                "proto"
+            ],
+            "time": "2017-12-20T23:07:13+00:00"
+        },
+        {
+            "name": "protobuf-php/protobuf",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/protobuf-php/protobuf.git",
+                "reference": "c0da95f75ea418b39b02ff4528ca9926cc246a8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/protobuf-php/protobuf/c0da95f75ea418b39b02ff4528ca9926cc246a8c.zip",
+                "reference": "c0da95f75ea418b39b02ff4528ca9926cc246a8c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "instaclick/coding-standard": "^1.1",
+                "instaclick/object-calisthenics-sniffs": "dev-master",
+                "instaclick/symfony2-coding-standard": "dev-remaster",
+                "php-mock/php-mock-phpunit": "^0.2",
+                "phpunit/phpunit": "^4",
+                "protobuf-php/protobuf-plugin": ">=0.1",
+                "satooshi/php-coveralls": "^0.6",
+                "squizlabs/php_codesniffer": "^1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Protobuf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabio B. Silva",
+                    "email": "fabio.bat.silva@gmail.com",
+                    "homepage": "https://github.com/FabioBatSilva"
+                },
+                {
+                    "name": "Iván -DrSlump- Montes",
+                    "email": "drslump@pollinimini.net",
+                    "homepage": "https://github.com/drslump"
+                }
+            ],
+            "description": "PHP implementation of Google's Protocol Buffers",
+            "homepage": "https://github.com/protobuf-php/protobuf",
+            "keywords": [
+                "protobuf",
+                "protocol buffer",
+                "serializing"
+            ],
+            "time": "2016-09-21T23:47:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0.0"
+    },
+    "platform-dev": []
+}
