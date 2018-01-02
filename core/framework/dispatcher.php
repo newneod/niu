@@ -10,6 +10,12 @@ class dispatcher
 	 */
 	private static $arrInstances = array();
 
+
+    /**
+     * 分发到控制器，并执行对应方法并返回
+     * @param array $arrRoute [ 'address', 'c', 'a' ]
+     * @return mixed
+     */
 	public function dispatche( $arrRoute )
 	{
 		require_once $arrRoute[ 'address' ];

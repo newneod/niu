@@ -10,6 +10,9 @@ require 'core/framework/core.php';
 
 class init
 {
+    /**
+     * cgi模式启动方法
+     */
 	public static function run()
 	{
 	    //实例化对象时，自动引用该类文件
@@ -24,6 +27,29 @@ class init
 		$objDispatcher = new dispatcher();
 		$objDispatcher->dispatche( $arrRoute );
 	}
+
+
+    /**
+     * cli模式启动方法
+     */
+    public static function cliRun( array $arrParams, $strDirUrl )
+    {
+        if( empty( $arrParams ) ){
+            exit( 'params cannot be empty!' );
+        }
+
+        //实例化对象时，自动引用该类文件
+        $objCore = new core();
+        $objCore->autoloadClass();
+
+        //通过路由获取要执行的Module/Controller/Action
+        $objRoute = new route();
+        $arrRoute = $objRoute->getCAddressByParams( $arrParams, $strDirUrl );
+
+        //分发执行
+        $objDispatcher = new dispatcher();
+        $objDispatcher->dispatche( $arrRoute );
+    }
 
 }
 
