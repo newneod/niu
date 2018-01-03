@@ -7,7 +7,7 @@ use app\module\model\testModel;
 class fooController
 {
     /**
-     * testMethod try tag1
+     * 220918
      */
     public function bar()
 	{
