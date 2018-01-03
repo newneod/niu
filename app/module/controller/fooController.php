@@ -7,7 +7,7 @@ use app\module\model\testModel;
 class fooController
 {
     /**
-     * testMethod
+     * testMethod try tag1
      */
     public function bar()
 	{
