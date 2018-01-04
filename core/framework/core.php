@@ -16,7 +16,7 @@ class core
     public function autoloadClass()
     {
         spl_autoload_register( function( $strClassName ){
-            require str_replace( '\\', '/', $strClassName ) . '.php';
+            require_once str_replace( '\\', '/', $strClassName ) . '.php';
         }, true );
     }
 

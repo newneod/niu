@@ -1,7 +1,7 @@
 <?php
 namespace core\framework;
 
-require 'conf/code.php';
+require_once 'conf/code.php';
 
 class dispatcher
 {

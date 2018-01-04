@@ -1,7 +1,7 @@
 <?php
 
-require 'core/framework/init.php';
-require 'conf/config.php';
+require_once 'core/framework/init.php';
+require_once 'conf/config.php';
 
 switch( SAPI_MODE ){
     case 'CGI':

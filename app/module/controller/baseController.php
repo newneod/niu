@@ -4,7 +4,7 @@ namespace app\module\controller;
 
 use core\controller\coreController;
 
-require 'app/module/model/test.php';
+require_once 'app/module/model/test.php';
 
 class baseController extends coreController
 {

@@ -4,9 +4,9 @@ namespace core\framework;
 use core\framework\route;
 use core\framework\dispatcher;
 
-require 'core/framework/route.php';
-require 'core/framework/dispatcher.php';
-require 'core/framework/core.php';
+require_once 'core/framework/route.php';
+require_once 'core/framework/dispatcher.php';
+require_once 'core/framework/core.php';
 
 class init
 {

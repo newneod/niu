@@ -2,17 +2,16 @@
 
 namespace app\module\controller;
 
-use app\module\model\testModel;
-
 class fooController
 {
-    /**
-     * 222245
-     */
     public function bar()
 	{
-		$a = new testModel;
-		$a->test();
+		$a = new factoryController();
+		try{
+		    var_dump( $a->getArea(5) );
+		}catch ( \Exception $e ){
+    		var_dump( $e->getMessage() );exit;
+		}
 	}
 }
 
