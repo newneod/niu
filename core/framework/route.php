@@ -19,7 +19,7 @@ class route
 		}
 
 		//文件存在性校验
-		if( '' === $arrRes[ 'm' ] || '' === $arrRes[ 'c' ] || '' === $arrRes[ 'a' ] ){
+		if( '' === $arrRes[ 'm' ] || '' === $arrRes[ 'c' ] ){
 			exit( 'param error!' );
 		}
 		$strRequire = 'app/' . $arrRes[ 'm' ] . '/controller/' . $arrRes[ 'c' ] . 'Controller.php';

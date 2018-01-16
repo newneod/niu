@@ -33,8 +33,14 @@ class dispatcher
             self::$arrInstances[ $strTempC ] = $objC;
         }
 
-		$strTempA = $arrRoute[ 'a' ];
-		return $objC->$strTempA();
+        $strTempA = $arrRoute[ 'a' ];
+        if( isset( $strTempA ) ){
+            return $objC->$strTempA();
+        }else{
+            return $objC;
+        }
+
+
 	}
 }
 

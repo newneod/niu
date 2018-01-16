@@ -25,7 +25,7 @@ class init
 
 		//分发执行
 		$objDispatcher = new dispatcher();
-		$objDispatcher->dispatche( $arrRoute );
+		return $objDispatcher->dispatche( $arrRoute );
 	}
 
 

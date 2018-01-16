@@ -8,7 +8,7 @@ class fooController
 	{
 		$a = new factoryController();
 		try{
-		    var_dump( $a->getArea(5) );
+		    var_dump( $a->getArea(5,6) );
 		}catch ( \Exception $e ){
     		var_dump( $e->getMessage() );exit;
 		}
