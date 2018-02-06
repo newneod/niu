@@ -28,7 +28,7 @@ class route
 		}
 
 		//返回待加载的controller地址
-		return array( 'address' => $strRequire, 'c' => $arrRes[ 'c' ], 'a' => $arrRes[ 'a' ] );
+		return array( 'address' => $strRequire, 'm' => $arrRes[ 'm' ], 'c' => $arrRes[ 'c' ], 'a' => $arrRes[ 'a' ] );
 	}
 
 
@@ -50,6 +50,7 @@ class route
         //返回待加载的controller地址
         return array( 'address' => $strRequire, 'c' => $_SERVER[ 'argv' ][ 2 ], 'a' => $_SERVER[ 'argv' ][ 3 ] );
     }
+
 }
 
 ?>

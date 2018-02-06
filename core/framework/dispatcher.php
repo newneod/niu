@@ -19,7 +19,7 @@ class dispatcher
 	public function dispatche( $arrRoute )
 	{
 		require_once $arrRoute[ 'address' ];
-		$strTempC = '\\app\\module\\controller\\' . $arrRoute[ 'c' ] . 'Controller';//使用命名空间时
+		$strTempC = '\\app\\' . $arrRoute[ 'm' ] . '\\controller\\' . $arrRoute[ 'c' ] . 'Controller';//使用命名空间时
 		//$strTempC = $arrRoute[ 'c' ] . 'Controller';//不使用命名空间时
 
 		if( !class_exists( $strTempC ) ){
@@ -39,9 +39,8 @@ class dispatcher
         }else{
             return $objC;
         }
-
-
 	}
+
 }
 
 
