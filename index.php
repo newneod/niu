@@ -2,6 +2,7 @@
 
 require_once 'core/framework/init.php';
 require_once 'conf/config.php';
+require_once 'vendor/autoload.php';
 
 switch( SAPI_MODE ){
     case 'CGI':

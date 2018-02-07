@@ -3,7 +3,7 @@
 .settings/*
 .buildpath
 .project
-/.idea
+.idea
 /temp
 .idea
 .DS_Store
