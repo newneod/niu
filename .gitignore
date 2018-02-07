@@ -3,10 +3,11 @@
 .settings/*
 .buildpath
 .project
-.idea
+.idea/*
 /temp
 .idea
 .DS_Store
 /app/.DS_Store
 /vendor
 .DS_Store
+dump.rdb

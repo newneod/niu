@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c40ae2d-76d3-403c-9042-40e2987dd8bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/test.iml" afterPath="$PROJECT_DIR$/.idea/test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dingding/controller/fooController.php" afterPath="$PROJECT_DIR$/app/dingding/controller/fooController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/config.php" afterPath="$PROJECT_DIR$/conf/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/framework/route.php" afterPath="$PROJECT_DIR$/core/framework/route.php" />
-    </list>
+    <list default="true" id="8c40ae2d-76d3-403c-9042-40e2987dd8bb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,12 +215,12 @@
       <option name="presentableId" value="Default" />
       <updated>1514123604835</updated>
       <workItem from="1518007488230" duration="1781000" />
-      <workItem from="1518010010319" duration="4744000" />
+      <workItem from="1518010010319" duration="4792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6525000" />
+    <option name="totallyTimeSpent" value="6573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1440" height="819" extended-state="0" />
