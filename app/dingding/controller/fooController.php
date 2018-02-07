@@ -6,7 +6,7 @@ class fooController
 {
     public function bar()
 	{
-		echo 333;exit;
+		echo 888;exit;
 	}
 }
 

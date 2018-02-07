@@ -9,27 +9,94 @@ class route
      */
 	public function getCAddressByUrl()
 	{
-		//根据参数获取模块名，控制器名和方法名
-		$strParams = parse_url( $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )[ 'query' ];
-		$arrParams = explode( '&', $strParams );
-		$arrRes = array();
-		foreach( $arrParams AS $key => $strParam ){
-			$arrParam = explode( '=', $strParam );
-			$arrRes[ $arrParam[ 0 ] ] = $arrParam[ 1 ];
-		}
-
-		//文件存在性校验
-		if( '' === $arrRes[ 'm' ] || '' === $arrRes[ 'c' ] ){
-			exit( 'param error!' );
-		}
-		$strRequire = 'app/' . $arrRes[ 'm' ] . '/controller/' . $arrRes[ 'c' ] . 'Controller.php';
+        $arrParams = $this->_getUrlParamsByUrlMode();
+		$strRequire = 'app/' . $arrParams[ 'm' ] . '/controller/' . $arrParams[ 'c' ] . 'Controller.php';
 		if( !file_exists( $strRequire ) ){
-			exit( 'file not found!' );
+			exit( $arrParams[ 'c' ] . 'Controller.php not found!' );
 		}
 
 		//返回待加载的controller地址
-		return array( 'address' => $strRequire, 'm' => $arrRes[ 'm' ], 'c' => $arrRes[ 'c' ], 'a' => $arrRes[ 'a' ] );
+		return array( 'address' => $strRequire, 'm' => $arrParams[ 'm' ], 'c' => $arrParams[ 'c' ], 'a' => $arrParams[ 'a' ] );
 	}
+
+    /**
+     * 通过配置文件中的urlMode获取url参数
+     * @return array
+     */
+	private function _getUrlParamsByUrlMode()
+    {
+        switch( URL_MODE ){
+            case 0://普通模式
+                $arrParams = $this->_getNormalUrlPamams();
+                break;
+            case 1://pathinfo模式
+                $arrParams = $this->_getPathInfoUrlParams();
+                break;
+            default://模式信息错误
+                exit( 'url mode error!' );
+                break;
+        }
+        return $arrParams;
+    }
+
+
+    /**
+     * 通过常规模式url获取module、controller和action参数
+     * @return array
+     */
+	private function _getNormalUrlPamams()
+    {
+        //根据参数获取模块名，控制器名和方法名
+        $strParams = parse_url( $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )[ 'query' ];
+        $arrParams = explode( '&', $strParams );
+
+        if( count( $arrParams ) < 3 ){
+            exit( 'please check your normal mode url!' );
+        }
+
+        $arrRes = array();//初始化最终结果
+        foreach( $arrParams AS $key => $strParam ){
+            $arrParam = explode( '=', $strParam );
+            $arrRes[ $arrParam[ 0 ] ] = $arrParam[ 1 ];
+        }
+
+        //参数非空校验
+        if( '' === $arrRes[ 'm' ] || '' === $arrRes[ 'c' ] || '' === $arrRes[ 'a' ] ){
+            exit( 'param error!' );
+        }
+
+        return $arrRes;
+    }
+
+
+    /**
+     * 通过pathInfo模式url获取module、controller和action参数
+     * @return array
+     */
+    private function _getPathInfoUrlParams()
+    {
+        $strUrl = $_SERVER[ 'REQUEST_URI' ];
+        $arrUrl = explode( 'index.php', $strUrl );
+        if( count( $arrUrl ) != 2 ){
+            exit( 'url error!' );
+        }
+
+        $arrParams = explode( '/', trim( $arrUrl[ 1 ], '/' ) );
+        if( count( $arrParams ) < 3 ){
+            exit( 'please check your pathinfo mode url!' );
+        }
+
+        //参数非空校验
+        if( '' === $arrParams[ 0 ] || '' === $arrParams[ 1 ] || '' === $arrParams[ 2 ] ){
+            exit( 'param error!' );
+        }
+
+        $arrRes = array();//初始化最终结果
+        $arrRes[ 'm' ] = $arrParams[ 0 ];
+        $arrRes[ 'c' ] = $arrParams[ 1 ];
+        $arrRes[ 'a' ] = $arrParams[ 2 ];
+        return $arrRes;
+    }
 
 
     /**
