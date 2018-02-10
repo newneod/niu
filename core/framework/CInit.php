@@ -1,14 +1,14 @@
 <?php 
 namespace core\framework;
 
-use core\framework\route;
-use core\framework\dispatcher;
+use core\framework\CRoute;
+use core\framework\CDispatcher;
 
-require_once 'core/framework/route.php';
-require_once 'core/framework/dispatcher.php';
-require_once 'core/framework/core.php';
+require_once 'core/framework/CRoute.php';
+require_once 'core/framework/CDispatcher.php';
+require_once 'core/framework/CCore.php';
 
-class init
+class CInit
 {
     /**
      * cgi模式启动方法
@@ -16,15 +16,15 @@ class init
 	public static function run()
 	{
 	    //实例化对象时，自动引用该类文件
-	    $objCore = new core();
+	    $objCore = new CCore();
 	    $objCore->autoloadClass();
 
 		//通过路由获取要执行的Module/Controller/Action
-		$objRoute = new route();
+		$objRoute = new CRoute();
 		$arrRoute = $objRoute->getCAddressByUrl();
 
 		//分发执行
-		$objDispatcher = new dispatcher();
+		$objDispatcher = new CDispatcher();
 		return $objDispatcher->dispatche( $arrRoute );
 	}
 
@@ -39,15 +39,15 @@ class init
         }
 
         //实例化对象时，自动引用该类文件
-        $objCore = new core();
+        $objCore = new CCore();
         $objCore->autoloadClass();
 
         //通过路由获取要执行的Module/Controller/Action
-        $objRoute = new route();
+        $objRoute = new CRoute();
         $arrRoute = $objRoute->getCAddressByParams( $strDirUrl );
 
         //分发执行
-        $objDispatcher = new dispatcher();
+        $objDispatcher = new CDispatcher();
         $objDispatcher->dispatche( $arrRoute );
     }
 

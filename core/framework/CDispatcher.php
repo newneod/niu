@@ -1,9 +1,9 @@
 <?php
 namespace core\framework;
 
-require_once 'conf/code.php';
+require_once 'core/framework/CCore.php';
 
-class dispatcher
+class CDispatcher
 {
 	/*
 	 * 初始化单例数组
@@ -23,7 +23,7 @@ class dispatcher
 		//$strTempC = $arrRoute[ 'c' ] . 'Controller';//不使用命名空间时
 
 		if( !class_exists( $strTempC ) ){
-			exit( '类不存在!' );
+			exit( '"' . $strTempC . '" is not exists!' );
 		}
 
 		if( isset( self::$arrInstances[ $strTempC ] ) ){

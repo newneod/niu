@@ -1,7 +1,7 @@
 <?php
 namespace core\framework;
 
-class route
+class CRoute
 {
     /**
      * cgi模式通过url获取路由地址
@@ -9,7 +9,7 @@ class route
      */
 	public function getCAddressByUrl()
 	{
-        $arrParams = $this->_getUrlParamsByUrlMode();
+        $arrParams = $this->_getParamsByUrlMode();
 		$strRequire = 'app/' . $arrParams[ 'm' ] . '/controller/' . $arrParams[ 'c' ] . 'Controller.php';
 		if( !file_exists( $strRequire ) ){
 			exit( $arrParams[ 'c' ] . 'Controller.php not found!' );
@@ -19,15 +19,16 @@ class route
 		return array( 'address' => $strRequire, 'm' => $arrParams[ 'm' ], 'c' => $arrParams[ 'c' ], 'a' => $arrParams[ 'a' ] );
 	}
 
+
     /**
      * 通过配置文件中的urlMode获取url参数
      * @return array
      */
-	private function _getUrlParamsByUrlMode()
+	private function _getParamsByUrlMode()
     {
         switch( URL_MODE ){
             case 0://普通模式
-                $arrParams = $this->_getNormalUrlPamams();
+                $arrParams = $this->_getNormalUrlParams();
                 break;
             case 1://pathinfo模式
                 $arrParams = $this->_getPathInfoUrlParams();
@@ -44,7 +45,7 @@ class route
      * 通过常规模式url获取module、controller和action参数
      * @return array
      */
-	private function _getNormalUrlPamams()
+	private function _getNormalUrlParams()
     {
         //根据参数获取模块名，控制器名和方法名
         $strParams = parse_url( $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )[ 'query' ];

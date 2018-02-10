@@ -2,11 +2,13 @@
 
 namespace app\dingding\controller;
 
-class fooController
+use core\controller\CController;
+
+class fooController extends CController
 {
     public function bar()
 	{
-		echo 888;exit;
+		var_dump(self::$_GET);exit;
 	}
 }
 

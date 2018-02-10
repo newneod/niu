@@ -2,9 +2,9 @@
 
 namespace app\dingding\controller;
 
-use core\controller\coreController;
+use core\controller\cController;
 
-class baseController extends coreController
+class baseController extends cController
 {
 
     public function __construct()

@@ -1,8 +1,7 @@
 <?php 
 namespace core\framework;
 
-
-class core
+class CCore
 {
     /*
 	 * 初始化单例数组

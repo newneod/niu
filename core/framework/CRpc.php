@@ -1,7 +1,7 @@
 <?php
 namespace core\framework;
 
-class rpc
+class CRpc
 {
     private static $handleCurl;
 

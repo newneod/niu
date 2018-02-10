@@ -2,7 +2,7 @@
 
 namespace core\model;
 
-class coreModel
+class CModel
 {
 
 }
