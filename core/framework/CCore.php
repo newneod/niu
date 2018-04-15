@@ -35,6 +35,7 @@ class CCore
             $obj = self::$arrInstances[ $strClassName ];
         }else{
             $obj = new $strClassName;
+            self::$arrInstances[ $strClassName ] = $obj;
         }
         return $obj;
     }
