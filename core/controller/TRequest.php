@@ -1,5 +1,5 @@
 <?php 
-namespace core\framework;
+namespace core\controller;
 
 trait TRequest
 {

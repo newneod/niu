@@ -1,7 +1,7 @@
 <?php
 namespace core\framework;
 
-require_once 'core/framework/CCore.php';
+require_once 'core/runtime/CCore.php';
 
 class CDispatcher
 {

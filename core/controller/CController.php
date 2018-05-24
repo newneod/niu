@@ -2,7 +2,7 @@
 
 namespace core\controller;
 
-use core\framework\TRequest;
+use core\controller\TRequest;
 
 class CController
 {

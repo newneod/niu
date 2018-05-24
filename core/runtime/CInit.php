@@ -4,9 +4,9 @@ namespace core\framework;
 use core\framework\CRoute;
 use core\framework\CDispatcher;
 
-require_once 'core/framework/CRoute.php';
-require_once 'core/framework/CDispatcher.php';
-require_once 'core/framework/CCore.php';
+require_once 'core/runtime/CRoute.php';
+require_once 'core/runtime/CDispatcher.php';
+require_once 'core/runtime/CCore.php';
 
 class CInit
 {

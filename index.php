@@ -1,6 +1,6 @@
 <?php
 
-require_once 'core/framework/CInit.php';
+require_once 'core/runtime/CInit.php';
 require_once 'conf/config.php';
 require_once 'vendor/autoload.php';
 
