@@ -14,5 +14,5 @@ class fooController
 		}
 	}
 }
-
+i
 ?>
